@@ -1,4 +1,4 @@
-//This file is the entry point for your Express application. It sets up the server, connects to the database, defines middleware, and mounts API routes.
+
 
 import "dotenv/config";
 import express from "express";
