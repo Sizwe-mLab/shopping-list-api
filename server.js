@@ -1,19 +1,18 @@
+//This file is the entry point for your Express application. It sets up the server, connects to the database, defines middleware, and mounts API routes.
+
 import "dotenv/config";
 import express from "express";
-import mongoose from "mongoose";
 import cors from "cors";
-
+import connectDB from "./config/database.js"
+import router from "./routes/api.js";
 const app = express();
 const PORT = process.env.PORT || 8080
 
+//connect to db
+connectDB()
 app.use(cors());
 app.use(express.json());
-
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("Successful connection"))
-  .catch((err) => console.error(err));
-
+app.use('/api/v1', router)
 
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`)
