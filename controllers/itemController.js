@@ -1,4 +1,3 @@
-import item from "../models/item.js";
 import Item from "../models/item.js";
 /*
 The provided code defines an asynchronous function named createItem that handles the creation of a new item within a Node.js Express application using MongoDB. 
